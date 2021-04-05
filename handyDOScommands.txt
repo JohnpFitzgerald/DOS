@@ -1,0 +1,44 @@
+
+The following command will list every program on your computer and 
+write them to file ProgramsList.txt (Powershell only)
+__________________________________________________________________
+> Get-ItemProperty 
+HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*, 
+HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*, 
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, 
+DisplayVersion, Publisher, Size, InstallDate | Format-Table -AutoSize > C:\Users\Jfitz\Documents\ProgramsList.txt
+
+
+Windows app store progs:
+_________________________
+Get-AppxPackage > C:\Users\jfitz\Documents\StoreProgramsList.txt
+
+
+
+
+Shutdown in an hour:
+_____________________
+
+>shutdown -s -t 3600
+
+
+
+show wifi networks:
+____________________
+
+>netsh -wlan show profile 
+
+
+
+Show wifi passwords:
+_____________________
+
+>netsh -wlan show profile networkname key=clear 
+
+
+
+watch an ascii version of Star Wars (turn on telnet capibility)
+________________________________________________________________
+
+>telnet towel.blinkenlights.nl
+
